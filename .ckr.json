@@ -1,0 +1,10 @@
+{
+  "data_uoa": "ck-cntk",
+  "data_uid": "e593999edb49689a",
+  "data_alias": "ck-cntk",
+  "data_name": "ck-cntk",
+  "dict": {
+    "shared": "git",
+    "url": "https://github.com/ctuning/ck-cntk"
+  }
+}
