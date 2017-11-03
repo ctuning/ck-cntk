@@ -30,23 +30,30 @@ case "$x" in
   *)
     sudo ${CK_PYTHON_PIP_BIN} install --upgrade pip
     sudo ${CK_PYTHON_PIP_BIN} install requests matplotlib jupyter opencv-python
-    if [ "${CK_PYTHON_VER3}" == "YES" ] ; then
-      sudo apt-get install python3-tk
-    else
-      sudo apt-get install python-tk
-    fi 
+#    if [ "${CK_PYTHON_VER3}" == "YES" ] ; then
+#      sudo apt-get install python3-tk
+#    else
+#      sudo apt-get install python-tk
+#    fi 
     ;;
 esac
 
 ######################################################################################
+URL=https://cntk.ai/PythonWheel/${CNTK_PACKAGE_TYPE}/cntk-${CNTK_PACKAGE_VER}-${CNTK_PACKAGE_FILE_EXT}
+
 echo ""
-echo "Downloading and installing CNTK prebuilt binaries (${TF_PYTHON_URL}) ..."
+echo "Downloading and installing CNTK prebuilt binaries (${URL}) ..."
 echo ""
 
-${CK_PYTHON_PIP_BIN} install CNTK${CNTK_EXTRA}==${CNTK_PACKAGE_VER} -t ${INSTALL_DIR}/lib
+${CK_PYTHON_PIP_BIN} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib
 if [ "${?}" != "0" ] ; then
   echo "Error: installation failed!"
   exit 1
 fi
+
+# Trying to remove pythonX from path (to unify installation via CK)
+cd $INSTALL_DIR/lib/lib
+cd `ls`
+mv * ..
 
 exit 0

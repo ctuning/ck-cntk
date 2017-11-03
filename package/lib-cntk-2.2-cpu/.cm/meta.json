@@ -15,7 +15,7 @@
       "tags": "compiler,python"
     }
   },
-  "end_full_path_universal": "lib$#sep#$Lib$#sep#$site-packages$#sep#$cntk$#sep#$__init__.py",
+  "end_full_path_universal": "lib$#sep#$lib$#sep#$site-packages$#sep#$cntk$#sep#$__init__.py",
   "need_cpu_info": "yes",
   "only_for_host_os_tags": [
     "linux",
