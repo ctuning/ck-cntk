@@ -5,6 +5,17 @@
   "data_name": "ck-cntk",
   "dict": {
     "shared": "git",
-    "url": "https://github.com/ctuning/ck-cntk"
+    "url": "https://github.com/ctuning/ck-cntk",
+    "repo_deps": [
+      {
+        "repo_uoa": "ck-autotuning"
+      },
+      {
+        "repo_uoa": "ck-math"
+      },
+      {
+        "repo_uoa": "ctuning-datasets-min"
+      }
+    ]
   }
 }
