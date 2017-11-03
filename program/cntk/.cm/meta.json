@@ -77,6 +77,22 @@
       "run_time": {
         "run_cmd_main": "$<<CK_PYTHON_IPYTHON_BIN_FULL>>$"
       }
+    },
+    "cmd": {
+      "ignore_return_code": "yes",
+      "run_deps": {
+        "lib-cntk": {
+          "local": "yes",
+          "name": "CNTK library",
+          "no_tags": "vsrc",
+          "skip_pruning_by_other_deps": "yes",
+          "sort": 10,
+          "tags": "lib,cntk"
+        }
+      },
+      "run_time": {
+        "run_cmd_main": "bash"
+      }
     }
   },
   "run_vars": {},
