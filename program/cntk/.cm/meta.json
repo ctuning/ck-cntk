@@ -6,62 +6,6 @@
   "process_in_tmp": "yes",
   "program": "yes",
   "run_cmds": {
-    "classify-cpu": {
-      "dataset_tags": [
-        "image",
-        "jpeg",
-        "dataset"
-      ],
-      "ignore_return_code": "no",
-      "run_deps": {
-        "lib-cntk": {
-          "local": "yes",
-          "name": "CNTK library",
-          "no_tags": "vsrc",
-          "skip_pruning_by_other_deps": "yes",
-          "sort": 10,
-          "tags": "lib,cntk,vcpu"
-        },
-        "cntk-model": {
-          "local": "yes",
-          "name": "CNTK model",
-          "skip_pruning_by_other_deps": "yes",
-          "sort": 20,
-          "tags": "cntkmodel"
-        }
-      },
-      "run_time": {
-        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../classify.py $<<CK_ENV_MODEL_CNTK_MODEL_FULL>>$ $<<CK_ENV_MODEL_CNTK_LABELS_FULL>>$ $#dataset_path#$$#dataset_filename#$ 0"
-      }
-    },
-    "classify-gpu": {
-      "dataset_tags": [
-        "image",
-        "jpeg",
-        "dataset"
-      ],
-      "ignore_return_code": "no",
-      "run_deps": {
-        "lib-cntk": {
-          "local": "yes",
-          "name": "CNTK library",
-          "no_tags": "vsrc",
-          "skip_pruning_by_other_deps": "yes",
-          "sort": 10,
-          "tags": "lib,cntk,vcuda"
-        },
-        "cntk-model": {
-          "local": "yes",
-          "name": "CNTK model",
-          "skip_pruning_by_other_deps": "yes",
-          "sort": 20,
-          "tags": "cntkmodel"
-        }
-      },
-      "run_time": {
-        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../classify.py $<<CK_ENV_MODEL_CNTK_MODEL_FULL>>$ $<<CK_ENV_MODEL_CNTK_LABELS_FULL>>$ $#dataset_path#$$#dataset_filename#$ 1"
-      }
-    },
     "demo-feed-forward-net": {
       "ignore_return_code": "no",
       "run_deps": {
