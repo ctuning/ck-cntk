@@ -62,6 +62,22 @@
         "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../classify.py $<<CK_ENV_MODEL_CNTK_MODEL_FULL>>$ $<<CK_ENV_MODEL_CNTK_LABELS_FULL>>$ $#dataset_path#$$#dataset_filename#$ 1"
       }
     },
+    "demo-feed-forward-net": {
+      "ignore_return_code": "no",
+      "run_deps": {
+        "lib-cntk": {
+          "local": "yes",
+          "name": "CNTK library",
+          "no_tags": "vsrc",
+          "skip_pruning_by_other_deps": "yes",
+          "sort": 10,
+          "tags": "lib,cntk"
+        }
+      },
+      "run_time": {
+        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../FeedForwardNet.py"
+      }
+    },
     "ipython": {
       "ignore_return_code": "yes",
       "run_deps": {
