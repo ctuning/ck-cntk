@@ -6,7 +6,12 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     git zip bzip2 sudo wget \
-    libglib2.0-0 libsm6
+    libglib2.0-0 libsm6 \
+    libopenmpi-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libjasper-dev
 
 RUN pip3 install ck
 RUN ck  version
