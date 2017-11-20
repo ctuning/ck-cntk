@@ -45,7 +45,7 @@ echo ""
 echo "Downloading and installing CNTK prebuilt binaries (${URL}) ..."
 echo ""
 
-${CK_PYTHON_PIP_BIN} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib
+${CK_PYTHON_PIP_BIN} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib --system
 if [ "${?}" != "0" ] ; then
   echo "Error: installation failed!"
   exit 1
