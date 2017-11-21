@@ -16,6 +16,16 @@
           "skip_pruning_by_other_deps": "yes",
           "sort": 10,
           "tags": "lib,cntk"
+        },
+        "lib-mpi": {
+          "local": "yes",
+          "name": "Open MPI library",
+          "only_for_target_os_tags": [
+            "linux"
+          ],
+          "skip_default":"yes",
+          "sort": 30,
+          "tags": "lib,openmpi"
         }
       },
       "run_time": {
@@ -32,6 +42,16 @@
           "skip_pruning_by_other_deps": "yes",
           "sort": 10,
           "tags": "lib,cntk"
+        },
+        "lib-mpi": {
+          "local": "yes",
+          "name": "Open MPI library",
+          "only_for_target_os_tags": [
+            "linux"
+          ],
+          "skip_default":"yes",
+          "sort": 30,
+          "tags": "lib,openmpi"
         }
       },
       "run_time": {

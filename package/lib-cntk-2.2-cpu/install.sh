@@ -21,6 +21,11 @@ echo ""
 echo "Note that you sometimes need to upgrade your pip to the latest version"
 echo "to avoid well-known issues with user/system space installation:"
 
+SUDO="sudo "
+if [[ ${CK_PYTHON_PIP_BIN_FULL} == /home/* ]] ; then
+  SUDO=""
+fi
+
 echo ""
 read -r -p "Install OpenCV and other dependencies via sudo pip (Y/n)? " x
 
@@ -28,8 +33,13 @@ case "$x" in
   [nN][oO]|[nN])
     ;;
   *)
-    sudo ${CK_PYTHON_PIP_BIN} install --upgrade pip
-    sudo ${CK_PYTHON_PIP_BIN} install requests matplotlib jupyter opencv-python
+    echo ""
+    echo "Using ${SUDO} ${CK_PYTHON_PIP_BIN_FULL} ..."
+    echo ""
+
+    ${SUDO} ${CK_PYTHON_PIP_BIN_FULL} install --upgrade pip
+    ${SUDO} ${CK_PYTHON_PIP_BIN_FULL} install requests matplotlib jupyter opencv-python
+
 #    if [ "${CK_PYTHON_VER3}" == "YES" ] ; then
 #      sudo apt-get install python3-tk
 #    else
@@ -45,7 +55,14 @@ echo ""
 echo "Downloading and installing CNTK prebuilt binaries (${URL}) ..."
 echo ""
 
-${CK_PYTHON_PIP_BIN} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib --system
+# Check if has --system option
+${CK_PYTHON_PIP_BIN_FULL} install --help > tmp-pip-help.tmp
+if grep -q "\-\-system" tmp-pip-help.tmp ; then
+ SYS=" --system"
+fi
+rm -f tmp-pip-help.tmp
+
+${CK_PYTHON_PIP_BIN_FULL} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib ${SYS}
 if [ "${?}" != "0" ] ; then
   echo "Error: installation failed!"
   exit 1

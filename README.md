@@ -40,10 +40,17 @@ and vision papers [1](https://arxiv.org/abs/1506.06256), [2](http://doi.acm.org/
 
 ## Installation (Linux or Windows)
 
-### Pre-requisities
+### Prerequisites
 
 * Python 2.7+ or 3.4+ with pip
 * Python sub-packages will be installed by CK
+
+Linux:
+
+* If problem with ligpng: 
+```
+wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb   && sudo dpkg -i /tmp/libpng12.deb   && rm /tmp/libpng12.deb
+```
 
 ### CPU
 
