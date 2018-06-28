@@ -54,5 +54,6 @@
   "use_scripts_from_another_entry": {
     "data_uoa": "cc81d4c8da7a472e",
     "module_uoa": "package"
-  }
+  },
+  "template":"yes"
 }
