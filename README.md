@@ -7,38 +7,22 @@
 ## Introduction
 
 This repository provides high-level, portable and customizable workflows
-for [CNTK](https://github.com/Microsoft/CNTK) 
-as a part of our long-term community initiative
-to [unify and automate AI](http://cKnowledge.org/ai) 
-using [Collective Knowledge Framework (CK)](http://github.com/ctuning/ck/wiki).
-
-CK enables sharing of various AI engines and artifacts 
-as [reusable, customizable and portable components with a simple JSON API and meta information](http://cKnowledge.org/ai-artfacts)
-CK also helps researchers quickly prototype 
-[portable AI workflows](https://github.com/ctuning/ck/wiki/Portable-workflows)
-by assembling together CK components similar to LEGO(tm), 
-plugging in various versions of AI frameworks together with 
-different libraries, compilers, tools, models and data sets,
-and automating and customizing their installation across 
-Linux, Windows, MacOS and Android
-(see shared [CK repositories](https://github.com/ctuning/ck/wiki/Shared-repos),
-[modules](https://github.com/ctuning/ck/wiki/Shared-modules),
-[packages](https://github.com/ctuning/ck/wiki/Shared-packages) 
-and [software detection plugins](https://github.com/ctuning/ck/wiki/Shared-soft-descriptions)).
-
-Such portable workflows can now be crowdsourced 
-across diverse platforms from IoT to supercomputers provided by volunteers 
-to enable practical and collaborative benchmarking, optimization and co-design of 
-the whole AI stack (SW/HW/models) in terms of accuracy, execution time, power consumption, 
-resource usage and other costs (see [public open CK repository](http://cKnowledge.org/repo), 
-vision papers [1](https://arxiv.org/abs/1506.06256), [2](http://doi.acm.org/10.1145/2909437.2909449)
-and [reproducible and CK-powered AI/SW/HW co-design competitions at ACM/IEEE conferences](http://cKnowledge.org/request)).
+for [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/).
+It is a part of our long-term community initiative
+to unify and automate AI, ML and systems R&D
+using [Collective Knowledge Framework (CK)](http://cKnowledge.org),
+and to collaboratively co-design efficient SW/HW stack for AI/ML
+during open [ACM ReQuEST competitions](http://cKnowledge.org/request)
+as described in the [ACM ReQuEST report](https://portalparts.acm.org/3230000/3229762/fm/frontmatter.pdf).
+All benchmarking and optimization results are available 
+in the [public CK repository](http://cKnowledge.org/repo).
+See [CK getting started guide](https://github.com/ctuning/ck/wiki/First-Steps)
+for more details about CK.
 
 ## Coordination of development
 
 * [cTuning Foundation](http://cTuning.org)
 * [dividiti](http://dividiti.com)
-
 
 ## Minimal CK installation
 
@@ -133,38 +117,9 @@ $ ck run program:cntk
 
 Skip --sudo if you have local Docker installation.
 
-## Next steps
-
-We plan to add unified compilation of CNTK via CK 
-with various libs on Linux, Windows, MacOS and Android
-similar to [ck-caffe](https://github.com/dividiti/ck-caffe), 
-[ck-caffe2](https://github.com/ctuning/ck-caffe2),
-[ck-tensorflow](https://github.com/ctuning/ck-tensorflow),
-[CK-PyTorch](https://github.com/ctuning/ck-pytorch),
-[ck-mvnc](https://github.com/ctuning/ck-mvnc] 
-and [ck-mxnet](https://github.com/ctuning/ck-mxnet).
-
-We now have a proof-of-concept to unify AI engines and artifacts to perform collaborative AI/SW/HW benchmarking, 
-optimization and co-design to help researchers select the most efficient solutions for their experiments 
-(see our [public Collective Knowledge repo](http://cKnowledge.org/repo) 
-and [vision paper](https://arxiv.org/abs/1506.06256)). 
-Join [our long-term community initiative](http://cKnowledge.org/ai) 
-to crowdsource learning and AI/SW/HW co-design across billions of devices!
-
 ## Related Publications with long term CK vision
 
 ```
-@inproceedings{cm:29db2248aba45e59:cd11e3a188574d80,
-    url = {http://arxiv.org/abs/1506.06256},
-    title = {{Collective Mind, Part II: Towards Performance- and Cost-Aware Software Engineering as a Natural Science.}},
-    author = {Fursin, Grigori and Memon, Abdul and Guillon, Christophe and Lokhmotov, Anton},
-    booktitle = {{18th International Workshop on Compilers for Parallel Computing (CPC'15)}},
-    publisher = {ArXiv},
-    year = {2015},
-    month = January,
-    pdf = {http://arxiv.org/pdf/1506.06256v1}
-}
-
 @inproceedings{ck-date16,
     title = {{Collective Knowledge}: towards {R\&D} sustainability},
     author = {Fursin, Grigori and Lokhmotov, Anton and Plowman, Ed},
@@ -174,10 +129,23 @@ to crowdsource learning and AI/SW/HW co-design across billions of devices!
     url = {https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability}
 }
 
+@inproceedings{cm:29db2248aba45e59:0c7348dfbadd5b95,
+
+   author = {{Moreau}, Thierry and {Lokhmotov}, Anton and {Fursin}, Grigori},
+    title = "{Introducing ReQuEST: an Open Platform for Reproducible and Quality-Efficient Systems-ML Tournaments}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1801.06378},
+ primaryClass = "stat.ML",
+ keywords = {Statistics - Machine Learning, Computer Science - Learning, Computer Science - Software Engineering},
+     year = 2018,
+    month = jan,
+   adsurl = {http://adsabs.harvard.edu/abs/2018arXiv180106378M},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
 ```
 
 ## Feedback
 
-Get in touch with CK-AI developers [here](https://github.com/ctuning/ck/wiki/Contacts). 
-Also feel free to engage with our community via this mailing list:
-* http://groups.google.com/group/collective-knowledge
+* [CK community](https://github.com/ctuning/ck/wiki/Contacts).
