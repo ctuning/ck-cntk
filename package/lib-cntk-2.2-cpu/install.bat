@@ -13,16 +13,17 @@ echo.
 echo Downloading and installing misc deps ...
 echo.
 
-%CK_PYTHON_PIP_BIN% install --upgrade pip
-%CK_PYTHON_PIP_BIN% install requests matplotlib jupyter
+%CK_ENV_COMPILER_PYTHON_FILE% -m pip install --upgrade pip
 
-set URL=https://cntk.ai/PythonWheel/%CNTK_PACKAGE_TYPE%/cntk-%CNTK_PACKAGE_VER%-%CNTK_PACKAGE_FILE_EXT%
+%CK_ENV_COMPILER_PYTHON_FILE% -m pip install --ignore-installed requests matplotlib jupyter opencv-python -t %INSTALL_DIR%\lib
+
+set URL=https://cntk.ai/PythonWheel/%CNTK_PACKAGE_TYPE%/cntk%CNTK_PACKAGE_EXT%-%CNTK_PACKAGE_VER%-%CNTK_PACKAGE_FILE_EXT%
 
 echo.
 echo Downloading and installing CNTK prebuilt binaries (%URL%) ...
 echo.
 
-%CK_PYTHON_PIP_BIN% install %URL% --ignore-installed --prefix %INSTALL_DIR%\lib
+%CK_ENV_COMPILER_PYTHON_FILE% -m pip install %URL% --ignore-installed  -t %INSTALL_DIR%\lib
 if %errorlevel% neq 0 (
  echo.
  echo Error: Failed installing CNTK ...
