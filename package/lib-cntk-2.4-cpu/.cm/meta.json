@@ -2,10 +2,10 @@
   "customize": {
     "extra_dir": "", 
     "install_env": {
-      "CNTK_PACKAGE_TYPE": "GPU", 
-      "CNTK_PACKAGE_VER": "2.2"
+      "CNTK_PACKAGE_TYPE": "CPU-Only", 
+      "CNTK_PACKAGE_VER": "2.4"
     }, 
-    "version": "2.2"
+    "version": "2.4"
   }, 
   "deps": {
     "python": {
@@ -13,17 +13,6 @@
       "name": "Python", 
       "sort": 20, 
       "tags": "compiler,python"
-    },
-    "compiler-cuda": {
-      "local": "yes",
-      "name": "CUDA compiler",
-      "sort": 30,
-      "tags": "compiler,lang-c-cuda",
-      "version_from": [
-        8,
-        0,
-        0
-      ]
     }
   }, 
   "end_full_path_universal": "lib$#sep#$lib$#sep#$site-packages$#sep#$cntk$#sep#$__init__.py", 
@@ -36,24 +25,23 @@
     "linux", 
     "windows"
   ], 
-  "package_extra_name": " (prebuilt, gpu)", 
+  "package_extra_name": " (prebuilt, cpu)", 
   "process_script": "install", 
   "soft_uoa": "71c4a94768b7bbe1", 
-  "suggested_path": "cntk-prebuilt-gpu", 
+  "suggested_path": "cntk-prebuilt-cpu", 
   "tags": [
     "lib", 
     "cntk", 
-    "cntk-gpu", 
-    "v2.2", 
+    "cntk-cpu", 
+    "v2.4", 
     "v2", 
     "vprebuilt", 
-    "vgpu", 
-    "vcuda",
+    "vcpu", 
     "channel-stable"
-  ],
+  ], 
+  "template": "yes", 
   "use_scripts_from_another_entry": {
-    "data_uoa": "cc81d4c8da7a472e",
+    "data_uoa": "cc81d4c8da7a472e", 
     "module_uoa": "package"
-  },
-  "template":"yes"
+  }
 }

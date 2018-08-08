@@ -43,7 +43,7 @@
   "tags": [
     "lib", 
     "cntk", 
-    "cntk-cpu", 
+    "cntk-gpu", 
     "v2.2", 
     "v2", 
     "vprebuilt", 

@@ -48,7 +48,7 @@ if [ "${?}" != "0" ] ; then
 fi
 
 ######################################################################################
-URL=https://cntk.ai/PythonWheel/${CNTK_PACKAGE_TYPE}/cntk-${CNTK_PACKAGE_VER}-${CNTK_PACKAGE_FILE_EXT}
+URL=https://cntk.ai/PythonWheel/${CNTK_PACKAGE_TYPE}/cntk${CNTK_PACKAGE_EXT}-${CNTK_PACKAGE_VER}-${CNTK_PACKAGE_FILE_EXT}
 
 echo ""
 echo "Downloading and installing CNTK prebuilt binaries (${URL}) ..."
