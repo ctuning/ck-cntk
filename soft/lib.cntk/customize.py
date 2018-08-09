@@ -81,7 +81,9 @@ def setup(i):
     pll=os.path.join(pl,'cntk','libs')
 
     # Check CNTK binary installation
-    pb=os.path.join(p2,'cntk','cntk','bin')
+    pb=os.path.join(p2,'cntk','cntk')
+    if winh!='yes':
+       pb=os.path.join(pb,'bin')
 
     pbn='cntk'
     if winh=='yes':
