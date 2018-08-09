@@ -16,7 +16,7 @@
     }
   },
   "end_full_path": {
-    "linux": "lib/lib/site-packages/cntk/__init__.py",
+    "linux": "lib//cntk/__init__.py",
     "win": "lib\\cntk\\__init__.py"
   },
   "need_cpu_info": "yes",

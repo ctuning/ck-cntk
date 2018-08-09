@@ -35,13 +35,18 @@ fi
 rm -f tmp-pip-help.tmp
 
 ######################################################################################
+# Misc vars
+EXTRA_PYTHON_SITE=${INSTALL_DIR}/python_deps_site
+SHORT_PYTHON_VERSION=`${CK_ENV_COMPILER_PYTHON_FILE} -c 'import sys;print(sys.version[:3])'`
+export PACKAGE_LIB_DIR="${EXTRA_PYTHON_SITE}/lib/python${SHORT_PYTHON_VERSION}/site-packages"
+
+rm -rf ${EXTRA_PYTHON_SITE}
+
+######################################################################################
 echo "Downloading and installing Python deps ..."
 echo ""
 
-EXTRA_PYTHON_SITE=${INSTALL_DIR}/lib
-mkdir -p ${EXTRA_PYTHON_SITE}
-
-${CK_ENV_COMPILER_PYTHON_FILE} -m pip install --ignore-installed requests matplotlib jupyter opencv-python -t ${EXTRA_PYTHON_SITE}  ${SYS}
+${CK_ENV_COMPILER_PYTHON_FILE} -m pip install requests matplotlib jupyter opencv-python --ignore-installed --prefix=${EXTRA_PYTHON_SITE}  ${SYS}
 if [ "${?}" != "0" ] ; then
   echo "Error: installation failed!"
   exit 1
@@ -54,15 +59,41 @@ echo ""
 echo "Downloading and installing CNTK prebuilt binaries (${URL}) ..."
 echo ""
 
-${CK_PYTHON_PIP_BIN_FULL} install ${URL} --ignore-installed --prefix ${INSTALL_DIR}/lib ${SYS}
+${CK_ENV_COMPILER_PYTHON_FILE} -m pip install ${URL} --ignore-installed --prefix=${EXTRA_PYTHON_SITE} ${SYS}
 if [ "${?}" != "0" ] ; then
   echo "Error: installation failed!"
   exit 1
 fi
 
-# Trying to remove pythonX from path (to unify installation via CK)
-cd $INSTALL_DIR/lib/lib
-cd `ls`
-mv * ..
+######################################################################################
+# Making compatible with CK
+ln -s $PACKAGE_LIB_DIR ${INSTALL_DIR}/lib
+
+######################################################################################
+URL2=https://cntk.ai/BinaryDrop/${CNTK_PACKAGE_BINARY_ARC}
+
+echo ""
+echo "Downloading and installing CNTK prebuilt binaries (${URL2}) ..."
+echo ""
+
+cd $INSTALL_DIR/
+
+wget ${URL2}
+if [ "${?}" != "0" ] ; then
+  echo "Error: installation failed!"
+  exit 1
+fi
+
+echo ""
+echo "Ungzipping ${CNTK_PACKAGE_BINARY_ARC} ..."
+echo ""
+gzip -d ${CNTK_PACKAGE_BINARY_ARC}
+
+echo ""
+echo "Untarring ${CNTK_PACKAGE_BINARY_ARC2} ..."
+echo ""
+tar xvf ${CNTK_PACKAGE_BINARY_ARC2}
+
+rm ${CNTK_PACKAGE_BINARY_ARC2}
 
 exit 0

@@ -23,7 +23,6 @@
           "only_for_target_os_tags": [
             "linux"
           ],
-          "skip_default":"yes",
           "sort": 30,
           "tags": "lib,openmpi"
         }

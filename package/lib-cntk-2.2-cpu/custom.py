@@ -109,19 +109,34 @@ def setup(i):
             (ver1==3 and ver2==5) or 
             (ver1==3 and ver2==6)):
        return {'return':1, 'error':'Python version is not supported'}
-    
+
     ver=str(ver1)+str(ver2)
     f='cp'+ver+'-cp'+ver+'m'
+
+    # Binary file
+    pv=ie.get('CNTK_PACKAGE_VER','')
+    fb='CNTK-'+pv.replace('.','-')
 
     # Various customizations
     if hname=='win':
        f+='-win_amd64'
+       fb+='-Windows'
     else:
        if ver1==2 and ver2==7: f+='u'
        f+='-linux_x86_64'
+       fb+='-Linux'
 
     f+='.whl'
 
+    fb+='-64bit-'+ie.get('CNTK_PACKAGE_TYPE','')
+    if hname=='win':
+       fb2=fb+'.zip'
+    else:
+       fb+='.tar'
+       fb2=fb+'.gz'
+
     nie['CNTK_PACKAGE_FILE_EXT']=f
+    nie['CNTK_PACKAGE_BINARY_ARC']=fb2
+    nie['CNTK_PACKAGE_BINARY_ARC2']=fb
 
     return {'return':0, 'install_env':nie}

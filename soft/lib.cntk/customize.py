@@ -73,11 +73,41 @@ def setup(i):
     p1=os.path.dirname(fp)
     pl=os.path.dirname(p1)
     p2=os.path.dirname(pl)
-    pb=os.path.dirname(p2)
+#    pb=os.path.dirname(p2)
 
-    env[ep]=pb
-    env[ep+'_LIB']=pl
-    env[ep+'_BIN']=pb
+#    env[ep]=pb
+    env[ep+'_PYTHON_LIB']=pl
+
+    pll=os.path.join(pl,'cntk','libs')
+
+    # Check CNTK binary installation
+    pb=os.path.join(p2,'cntk','cntk','bin')
+
+    pbn='cntk'
+    if winh=='yes':
+       pbn+='.exe'
+
+    pb2=os.path.join(pb, pbn)
+
+    if os.path.isfile(pb2):
+       env[ep+'_BIN']=pb
+       env[ep+'_NAME']=pbn
+       env[ep+'_FULL']=pb2
+
+       pl1=os.path.join(p2, 'cntk', 'cntk', 'lib')
+       pl2=os.path.join(p2, 'cntk', 'dependencies', 'lib')
+
+       r = ck.access({'action': 'lib_path_export_script', 'module_uoa': 'os', 'host_os_dict': hosd, 'lib_path': pl1})
+       if r['return']>0: return r
+       s += r['script']
+
+       r = ck.access({'action': 'lib_path_export_script', 'module_uoa': 'os', 'host_os_dict': hosd, 'lib_path': pl2})
+       if r['return']>0: return r
+       s += r['script']
+
+       r = ck.access({'action': 'lib_path_export_script', 'module_uoa': 'os', 'host_os_dict': hosd, 'lib_path': pll})
+       if r['return']>0: return r
+       s += r['script']
 
     if winh=='yes':
         s+='\nset PYTHONPATH='+pl+';%PYTHONPATH%\n'
