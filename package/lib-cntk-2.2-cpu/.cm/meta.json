@@ -2,8 +2,8 @@
   "customize": {
     "extra_dir": "",
     "install_env": {
-      "CNTK_PACKAGE_VER": "2.2",
-      "CNTK_PACKAGE_TYPE": "CPU-Only"
+      "CNTK_PACKAGE_TYPE": "CPU-Only",
+      "CNTK_PACKAGE_VER": "2.2"
     },
     "version": "2.2"
   },
