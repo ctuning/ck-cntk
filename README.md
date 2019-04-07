@@ -22,9 +22,7 @@ in the [public CK repository](http://cKnowledge.org/repo).
 See [CK getting started guide](https://github.com/ctuning/ck/wiki/First-Steps)
 for more details about CK.
 
-## Coordination of development
-
-* [cTuning Foundation](http://cTuning.org)
+## Maintainers
 * [dividiti](http://dividiti.com)
 
 ## Minimal CK installation
