@@ -1,11 +1,10 @@
 {
-  "data_uoa": "ck-cntk",
-  "data_uid": "e593999edb49689a",
   "data_alias": "ck-cntk",
   "data_name": "ck-cntk",
+  "data_uid": "e593999edb49689a",
+  "data_uoa": "ck-cntk",
   "dict": {
-    "shared": "git",
-    "url": "https://github.com/ctuning/ck-cntk",
+    "desc": "Portable/customizable installation and unified access to CNTK AI framework with different workflows and data sets (see <a href=\"http://cKnowledge.org/request\">ReQuEST tournaments</a>).",
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
@@ -16,6 +15,8 @@
       {
         "repo_uoa": "ctuning-datasets-min"
       }
-    ]
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/ck-cntk"
   }
 }
