@@ -1,8 +1,8 @@
-**All CK components can be found at [cKnowledge.io](https://cKnowledge.io) and in [one GitHub repository](https://github.com/ctuning/ai)!**
+**All CK components can be found at [cKnowledge.io](https://cKnowledge.io) and in [one GitHub repository](https://github.com/ctuning/ck-mlops)!**
 
 # Collective Knowledge repository for CNTK
 
-**All CK components for AI and ML are now collected in [one repository](https://github.com/ctuning/ai)!**
+**All CK components for portable MLOps are now collected in [one repository](https://github.com/ctuning/ck-mlops)!**
 
 [![compatibility](https://github.com/ctuning/ck-guide-images/blob/master/ck-compatible.svg)](https://github.com/ctuning/ck)
 [![automation](https://github.com/ctuning/ck-guide-images/blob/master/ck-artifact-automated-and-reusable.svg)](http://cTuning.org/ae)
